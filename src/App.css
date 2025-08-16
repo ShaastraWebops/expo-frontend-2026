@@ -1,1 +1,25 @@
 @import "tailwindcss";
+
+@theme {
+  --color-primary-yellow: #f5a302;
+  --color-secondary-yellow: #f4b301;
+  --color-tertiary-yellow: #fed154;
+  --color-primary-black: #111111;
+  --color-secondary-black: #2a2e34;
+  --color-tertiary-black: #3b3f46;
+
+  --font-primary: "Headings", sans-serif;
+  --font-bangers: "Bangers", system-ui;
+}
+
+@font-face {
+  font-family: "Headings"; /* Choose a descriptive name for your font */
+  src: url("./assets/fonts/Kagitingan-Bold-2.otf") format("otf"),
+    url("./assets/fonts/Kagitingan-Bold-2.otf") format("truetype");
+  font-weight: normal; /* Define weight if applicable (e.g., bold, normal) */
+  font-style: normal; /* Define style if applicable (e.g., italic, normal) */
+}
+
+.header-button {
+  @apply [clip-path:polygon(0_0,100%_0,100%_70%,85%_100%,0_100%)] hidden mx-3 md:flex items-center justify-center sm:w-50 w-35 h-15 sm:h-20 bg-primary-yellow hover:scale-110 transition-all duration-100 hover:cursor-pointer
+}
