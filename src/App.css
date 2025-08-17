@@ -1,1 +1,31 @@
 @import "tailwindcss";
+
+@theme{
+    --color-black-100 : #3B3F46;
+    --color-black-150 : #2A2E34;
+    --color-black-200 : #1E2328;
+    --color-yellow-100 : #FED043;
+    --color-yellow-150 : #F5B301;
+    --color-yellow-200 : #3B3F46;
+}
+
+body{
+    background-color: black;
+}
+
+@keyframes float {
+          0% {
+            transform: translateY(100vh) rotate(0deg);
+            opacity: 0;
+          }
+          10% {
+            opacity: 0.6;
+          }
+          90% {
+            opacity: 0.6;
+          }
+          100% {
+            transform: translateY(-100px) rotate(360deg);
+            opacity: 0;
+          }
+        }
