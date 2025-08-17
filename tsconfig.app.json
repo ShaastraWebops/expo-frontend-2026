@@ -23,8 +23,9 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["src"],
+
+  "include": ["src","src/components/ContacUs.tsx"],
   "paths": {
-      "@/*": ["./src/*"]
-    }
+          "@/*": ["./src/*"]
+  }
 }

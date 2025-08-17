@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+
 @theme {
   --color-primary-yellow: #f5a302;
   --color-secondary-yellow: #f4b301;
@@ -10,6 +11,12 @@
 
   --font-primary: "Headings", sans-serif;
   --font-bangers: "Bangers", system-ui;
+  --color-black-100 : #3B3F46;
+    --color-black-150 : #2A2E34;
+    --color-black-200 : #1E2328;
+    --color-yellow-100 : #FED043;
+    --color-yellow-150 : #F5B301;
+    --color-yellow-200 : #3B3F46;
 }
 
 @font-face {
@@ -23,3 +30,4 @@
 .header-button {
   @apply [clip-path:polygon(0_0,100%_0,100%_70%,85%_100%,0_100%)] hidden mx-3 md:flex items-center justify-center sm:w-50 w-35 h-15 sm:h-20 bg-primary-yellow hover:scale-110 transition-all duration-100 hover:cursor-pointer
 }
+    
