@@ -7,8 +7,8 @@ interface Contact {
   name: string;
   role: string;
   phone: string;
-  email: string;
   image: string;
+  speciality: string;
 }
 
 const ContactPage: React.FC = () => {
@@ -20,21 +20,24 @@ const ContactPage: React.FC = () => {
       name: "Sai Sathwik Chandaluri",
       role: "Head | Shows and Exhibitions",
       phone: "+91 7842320365",
-      image: "./ProfPhoto(1).jpg" // Person 1
+      image: "./ProfPhoto(1).jpg",
+      speciality: "Exibition Planning & Coordination" // Person 1
     },
     {
       id: 2,
       name: "Vriddhi Venkateswaran",
       role: "Head | Shows and Exhibitions", 
       phone: "+91 9969955321",
-      image: "./Image formal.jpg" // Person 2
+      image: "./Image formal.jpg",
+      speciality: "Industry Relations & Partnerships" // Person 2
     },
     {
       id: 3,
       name: "Shanmukh",
       role: "Head | Shows and Exhibitions",
       phone: "+91 9849920303",
-      image: "PHOTO.jpg" // Person 3
+      image: "PHOTO.jpg",
+      speciality: "Logistics & Operations" // Person 3
     }
   ];
 
@@ -53,11 +56,11 @@ const ContactPage: React.FC = () => {
 
       {/* Contact Cards - Horizontal Flex */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 pb-16">
-        <div className="flex flex-col lg:flex-row gap-8 justify-center items-stretch">
+        <div className="flex flex-col lg:flex-row gap-10 justify-center items-stretch">
           {contacts.map((contact) => (
             <div
               key={contact.id}
-              className={`flex-1 max-w-sm mx-auto lg:mx-0 bg-gradient-to-br from-gray-800 to-gray-900 border-2 border-gray-700 rounded-2xl p-8 transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 cursor-pointer ${
+              className={`relative flex-1 max-w-sm h-90 mx-auto lg:mx-0 bg-gradient-to-br from-gray-800 to-gray-900 border-2 border-gray-700 rounded-2xl p-8 transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 cursor-pointer overflow-hidden ${
                 hoveredCard === contact.id ? 'border-yellow-400 shadow-2xl shadow-yellow-400/20' : ''
               }`}
               onMouseEnter={() => setHoveredCard(contact.id)}
@@ -94,6 +97,17 @@ const ContactPage: React.FC = () => {
                     {contact.phone}
                   </a>
                 </div>
+              </div>
+
+              {/* Speciality (appears on hover at bottom) */}
+              <div
+                className={`absolute bottom-5 left-1/2 -translate-x-1/2 text-center text-sm font-medium text-yellow-300 transition-all duration-500 ${
+                  hoveredCard === contact.id 
+                    ? 'opacity-100 translate-y-0' 
+                    : 'opacity-0 translate-y-6'
+                }`}
+              >
+                {contact.speciality}
               </div>
             </div>
           ))}
