@@ -81,12 +81,12 @@ const FAQsPage = () => {
     });
 
     return (
-        <div className="min-h-screen bg-black py-16 px-4">
+        <div className="min-h-screen py-16 px-4">
             <div className="max-w-6xl mx-auto">
 
                 {/* Header Section */}
                 <div className="text-center mb-16">
-                    <h1 className="text-5xl md:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-150 mb-6">
+                    <h1 className="text-5xl md:text-7xl font-bold text-transparent bg-clip-text bg-yellow-100 mb-6">
                         FAQs
                     </h1>
                     <p className="text-xl text-gray-300 max-w-3xl mx-auto">
@@ -103,7 +103,7 @@ const FAQsPage = () => {
                             placeholder="Search FAQs..."
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
-                            className="w-full bg-gray-800/50 backdrop-blur-sm border border-gray-600 rounded-2xl py-4 px-6 pl-14 text-white placeholder-gray-400 focus:border-yellow-400 focus:outline-none transition-all duration-300"
+                            className="w-full bg-gray-800/50 backdrop-blur-sm border border-gray-600 rounded-2xl py-4 px-6 pl-14 text-white placeholder-gray-400 focus:border-yellow-200 focus:outline-none transition-all duration-300"
                         />
                         <div className="absolute left-5 top-1/2 transform -translate-y-1/2 text-gray-400 text-xl">
                             🔍
@@ -117,7 +117,7 @@ const FAQsPage = () => {
                                 key={category}
                                 onClick={() => setActiveCategory(category)}
                                 className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 ${activeCategory === category
-                                        ? 'bg-gradient-to-r from-yellow-400 to-green-200 text-black-100 shadow-lg'
+                                        ? 'bg-gradient-to-r from-yellow-200 to-green-200 text-black-100 shadow-lg'
                                         : 'bg-gray-800 text-gray-300 hover:bg-gray-700 border border-gray-600'
                                     }`}
                             >
@@ -138,7 +138,7 @@ const FAQsPage = () => {
                         filteredFAQs.map((faq, index) => (
                             <div
                                 key={index}
-                                className="group bg-gray-800/50 backdrop-blur-sm rounded-2xl border border-gray-600 hover:border-yellow-400 transition-all duration-300 overflow-hidden"
+                                className="group bg-gray-800/50 backdrop-blur-sm rounded-2xl border border-gray-600 hover:border-yellow-200 transition-all duration-300 overflow-hidden"
                             >
                                 <button
                                     onClick={() => toggleFAQ(index)}
@@ -150,12 +150,12 @@ const FAQsPage = () => {
                                             <span className="text-lg font-semibold text-white pr-4">
                                                 {faq.question}
                                             </span>
-                                            <div className="text-xs text-yellow-300 mt-1">
+                                            <div className="text-xs text-yellow-150 mt-1">
                                                 {faq.category}
                                             </div>
                                         </div>
                                     </div>
-                                    <div className={`transform transition-transform duration-300 text-yellow-400 text-3xl ${openFAQ === index ? 'rotate-45' : 'rotate-0'
+                                    <div className={`transform transition-transform duration-300 text-yellow-200 text-3xl ${openFAQ === index ? 'rotate-45' : 'rotate-0'
                                         }`}>
                                         +
                                     </div>
