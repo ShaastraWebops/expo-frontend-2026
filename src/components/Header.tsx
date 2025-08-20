@@ -9,57 +9,63 @@ function Header() {
 
   return (
     <>
-      <div className="flex items-center md:justify-center py-4 relative">
-        <div className="title">
-          <h1 className="text-primary-yellow font-primary font-bold text-5xl sm:text-9xl text-center">
-            Expo'26
-          </h1>
-          <h2 className="text-primary-yellow font-primary sm:text-2xl text-md xs:text-center transform translate-x-20 sm:translate-x-40">
-            Where innovation finds
-            <br className="sm:hidden block" /> expression
-          </h2>
-        </div>
+      <header className="sticky top-0 z-50 backdrop-blur bg-primary-black/70 border-b border-white/5">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="flex items-center justify-between h-16">
+            {/* Brand */}
+            <a href="#" className="flex items-center gap-3">
+              <div className="w-8 h-8 rounded-md bg-primary-yellow" />
+              <div className="leading-tight">
+                <div className="text-primary-yellow font-primary text-xl">Shaastra Expo</div>
+                <div className="text-xs text-gray-300">IIT Madras • 2026</div>
+              </div>
+            </a>
 
-        <div className="absolute z-1000 overflow-hidden flex justify-end gap-2 px-4 w-full" onClick={handleMenuClick}>
-          <div className="bg-secondary-black rounded-full w-15 h-15 md:hidden">
-            <div id="hamburger" className={`flex-col gap-1 items-center justify-center h-full transition-all duration-200 ${isMenuOpen ? "hidden" : "flex"}`}>
-              <div className="bg-primary-yellow w-6 h-0.75"></div>
-              <div className="bg-primary-yellow w-6 h-0.75"></div>
-              <div className="bg-primary-yellow w-6 h-0.75"></div>
+            {/* Desktop Nav */}
+            <nav className="hidden md:flex items-center gap-6 text-gray-300">
+              <a href="#about" className="hover:text-white transition-colors">About</a>
+              <a href="#exhibits" className="hover:text-white transition-colors">Exhibits</a>
+              <a href="#faqs" className="hover:text-white transition-colors">FAQs</a>
+              <a href="#contact" className="hover:text-white transition-colors">Contact</a>
+            </nav>
+
+            {/* CTAs */}
+            <div className="hidden md:flex items-center">
+              <a className="header-button" href="#register">
+                <span className="text-base">Register</span>
+              </a>
+              <a className="header-button" href="#brochure">
+                <span className="text-base">Brochure</span>
+              </a>
             </div>
 
-            <div id="cross" className={`h-full w-full flex-col items-center justify-center transition-all duration-200 ${isMenuOpen ? "flex" : "hidden"}`}>
-              <img src="/close.svg" alt="" />
-            </div>
-          </div>
-
-          <div className="header-button">
-            <h1 className="text-3xl transform -translate-x-1 font-primary">
-              Register
-            </h1>
-          </div>
-
-          <div className="header-button">
-            <h1 className="text-3xl transform -translate-x-1 font-primary">
-              Broucher
-            </h1>
+            {/* Mobile menu button */}
+            <button
+              className="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-md bg-secondary-black border border-white/10"
+              onClick={handleMenuClick}
+              aria-label="Toggle Menu"
+            >
+              <span className={`block w-5 h-0.5 bg-primary-yellow transition-all ${isMenuOpen ? "rotate-45 translate-y-1" : ""}`} />
+              <span className={`block w-5 h-0.5 bg-primary-yellow my-1 transition-opacity ${isMenuOpen ? "opacity-0" : "opacity-100"}`} />
+              <span className={`block w-5 h-0.5 bg-primary-yellow transition-all ${isMenuOpen ? "-rotate-45 -translate-y-1" : ""}`} />
+            </button>
           </div>
         </div>
-      </div>
 
-      <div className={`absolute inset-0 z-50 backdrop-blur-[5px] flex-col items-end justify-start px-5 py-30 gap-4 transition-all duration-200 ${isMenuOpen ? "flex" : "hidden"}`}>
-        <div className="header-button block!">
-            <h1 className="text-2xl transform text-center -translate-x-1 font-primary">
-              Register
-            </h1>
+        {/* Mobile Menu */}
+        <div className={`${isMenuOpen ? "max-h-96" : "max-h-0"} md:hidden overflow-hidden transition-all duration-300 border-t border-white/5`}>
+          <div className="px-4 py-3 space-y-2">
+            <a href="#about" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 rounded-md text-gray-300 hover:bg-white/5">About</a>
+            <a href="#exhibits" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 rounded-md text-gray-300 hover:bg-white/5">Exhibits</a>
+            <a href="#faqs" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 rounded-md text-gray-300 hover:bg-white/5">FAQs</a>
+            <a href="#contact" onClick={() => setIsMenuOpen(false)} className="block px-3 py-2 rounded-md text-gray-300 hover:bg-white/5">Contact</a>
+            <div className="flex gap-3 pt-2">
+              <a className="header-button flex-1 justify-center" href="#register"><span>Register</span></a>
+              <a className="header-button flex-1 justify-center" href="#brochure"><span>Brochure</span></a>
+            </div>
           </div>
-
-          <div className="header-button block!">
-            <h1 className="text-2xl transform text-center -translate-x-1 font-primary">
-              Broucher
-            </h1>
-          </div>
-      </div>
+        </div>
+      </header>
     </>
   );
 }

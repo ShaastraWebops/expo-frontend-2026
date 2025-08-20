@@ -30,21 +30,23 @@ const exhibitData = [
 function WhyExhibit() {
   return (
     <>
-      <div className="flex flex-col items-center justify-center m-10">
-        <h1 className="text-6xl font-primary text-primary-yellow">Why Exhibit?</h1>
+      <section className="py-16">
+        <div className="max-w-6xl mx-auto px-4">
+          <h2 className="text-4xl md:text-6xl font-primary text-primary-yellow">Why Exhibit?</h2>
 
-        <div className="flex flex-wrap justify-center mt-10">
-            {exhibitData.map((exhibit, index) => {
-                return (
-                    <ExhibitCard 
-                        key={index} 
-                        title={exhibit.title} 
-                        description={exhibit.description} 
-                    />
-                );
-            })}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-10">
+              {exhibitData.map((exhibit, index) => {
+                  return (
+                      <ExhibitCard 
+                          key={index} 
+                          title={exhibit.title} 
+                          description={exhibit.description} 
+                      />
+                  );
+              })}
+          </div>
         </div>
-      </div>
+      </section>
     </>
   );
 }

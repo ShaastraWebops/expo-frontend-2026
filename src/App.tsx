@@ -10,13 +10,13 @@ import FAQsPage from "./components/Faqs.tsx";
 function App() {
   return (
     <>
-      <div className="min-h-screen bg-primary-black overflow-hidden">
+      <div className="min-h-screen bg-primary-black text-white">
         <Header />
         <Hero />
         <WhyExhibit />
         <PrevExhibits />
         <FAQsPage />
-        <ContactPage />
+        <div id="contact"><ContactPage /></div>
       </div>
     </>
   );

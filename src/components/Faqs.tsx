@@ -81,44 +81,44 @@ const FAQsPage = () => {
     });
 
     return (
-        <div className="min-h-screen py-16 px-4">
+        <section id="faqs" className="py-16 px-4">
             <div className="max-w-6xl mx-auto">
 
                 {/* Header Section */}
-                <div className="text-center mb-16">
-                    <h1 className="text-5xl md:text-7xl font-bold text-transparent bg-clip-text bg-yellow-100 mb-6">
+                <div className="text-center mb-12">
+                    <h2 className="text-4xl md:text-6xl font-primary text-primary-yellow mb-4">
                         FAQs
-                    </h1>
-                    <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                        Got questions? We've got answers! Find everything you need to know about Shaastra Expo 2026.
+                    </h2>
+                    <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+                        Find answers about Shaastra Expo 2026.
                     </p>
                 </div>
 
                 {/* Search and Filter Section */}
-                <div className="mb-12">
+                <div className="mb-10">
                     {/* Search Bar */}
-                    <div className="relative mb-8">
+                    <div className="relative mb-6">
                         <input
                             type="text"
                             placeholder="Search FAQs..."
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
-                            className="w-full bg-gray-800/50 backdrop-blur-sm border border-gray-600 rounded-2xl py-4 px-6 pl-14 text-white placeholder-gray-400 focus:border-yellow-200 focus:outline-none transition-all duration-300"
+                            className="w-full bg-secondary-black border border-white/10 rounded-lg py-3 px-4 pl-12 text-white placeholder-gray-400 focus:border-primary-yellow focus:outline-none transition"
                         />
-                        <div className="absolute left-5 top-1/2 transform -translate-y-1/2 text-gray-400 text-xl">
+                        <div className="absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400 text-lg">
                             🔍
                         </div>
                     </div>
 
                     {/* Category Filter */}
-                    <div className="flex flex-wrap justify-center gap-4">
+                    <div className="flex flex-wrap justify-center gap-3">
                         {categories.map((category) => (
                             <button
                                 key={category}
                                 onClick={() => setActiveCategory(category)}
-                                className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 ${activeCategory === category
-                                        ? 'bg-gradient-to-r from-yellow-200 to-green-200 text-black-100 shadow-lg'
-                                        : 'bg-gray-800 text-gray-300 hover:bg-gray-700 border border-gray-600'
+                                className={`px-4 py-2 rounded-md text-sm transition-colors ${activeCategory === category
+                                        ? 'bg-primary-yellow text-black'
+                                        : 'bg-secondary-black text-gray-300 border border-white/10 hover:bg-white/5'
                                     }`}
                             >
                                 {category}
@@ -128,55 +128,49 @@ const FAQsPage = () => {
                 </div>
 
                 {/* FAQ Items */}
-                <div className="space-y-6">
+                <div className="space-y-4">
                     {filteredFAQs.length === 0 ? (
                         <div className="text-center py-12">
-                            <div className="text-6xl mb-4">🤔</div>
-                            <p className="text-xl text-gray-300">No FAQs found matching your search.</p>
+                            <div className="text-5xl mb-2">🤔</div>
+                            <p className="text-gray-300">No FAQs found matching your search.</p>
                         </div>
                     ) : (
                         filteredFAQs.map((faq, index) => (
                             <div
                                 key={index}
-                                className="group bg-gray-800/50 backdrop-blur-sm rounded-2xl border border-gray-600 hover:border-yellow-200 transition-all duration-300 overflow-hidden"
+                                className="bg-secondary-black rounded-lg border border-white/10 overflow-hidden"
                             >
                                 <button
                                     onClick={() => toggleFAQ(index)}
-                                    className="w-full px-8 py-6 text-left flex justify-between items-center hover:bg-gray-700/50 transition-all duration-300"
+                                    className="w-full px-5 py-4 text-left flex justify-between items-center hover:bg-white/5 transition"
                                 >
-                                    <div className="flex items-center space-x-4">
-                                        <span className="text-2xl">{faq.icon}</span>
+                                    <div className="flex items-center gap-3">
+                                        <span className="text-xl">{faq.icon}</span>
                                         <div>
-                                            <span className="text-lg font-semibold text-white pr-4">
+                                            <span className="text-base font-semibold text-white pr-2">
                                                 {faq.question}
                                             </span>
-                                            <div className="text-xs text-yellow-150 mt-1">
-                                                {faq.category}
-                                            </div>
+                                            <span className="text-xs text-yellow-150">{faq.category}</span>
                                         </div>
                                     </div>
-                                    <div className={`transform transition-transform duration-300 text-yellow-200 text-3xl ${openFAQ === index ? 'rotate-45' : 'rotate-0'
+                                    <div className={`transform transition-transform text-yellow-200 text-2xl ${openFAQ === index ? 'rotate-45' : 'rotate-0'
                                         }`}>
                                         +
                                     </div>
                                 </button>
 
-                                <div className={`px-8 transition-all duration-500 ease-in-out overflow-hidden ${openFAQ === index
-                                        ? 'pb-6 opacity-100 max-h-96'
-                                        : 'pb-0 opacity-0 max-h-0'
-                                    }`}>
-                                    <div className={`text-gray-300 leading-relaxed transform transition-transform duration-500 ${openFAQ === index ? 'translate-y-0' : '-translate-y-4'
-                                        }`}>
-                                        {faq.answer}
-                                    </div>
-
-                                    {/* Tags */}
-                                    <div className="flex flex-wrap gap-2 mt-4">
-                                        {faq.tags.slice(0, 3).map((tag, tagIndex) => (
-                                            <span key={tagIndex} className="text-xs bg-yellow-150 text-black-100 px-2 py-1 rounded-full">
-                                                #{tag}
-                                            </span>
-                                        ))}
+                                <div className={`${openFAQ === index ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'} grid transition-all duration-300`}> 
+                                    <div className="overflow-hidden px-5 pb-4">
+                                        <div className="text-gray-300 leading-relaxed">
+                                            {faq.answer}
+                                        </div>
+                                        <div className="flex flex-wrap gap-2 mt-3">
+                                            {faq.tags.slice(0, 3).map((tag, tagIndex) => (
+                                                <span key={tagIndex} className="text-xs bg-yellow-150 text-black px-2 py-1 rounded-full">
+                                                    #{tag}
+                                                </span>
+                                            ))}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -184,9 +178,8 @@ const FAQsPage = () => {
                     )}
                 </div>
 
-
             </div>
-        </div>
+        </section>
 
     );
 };

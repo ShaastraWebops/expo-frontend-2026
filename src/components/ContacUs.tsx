@@ -42,56 +42,46 @@ const ContactPage: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen text-white overflow-hidden relative">
+    <section className="py-16">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="text-center mb-10">
+          <h2 className="text-4xl md:text-6xl font-primary text-primary-yellow mb-2">Contact Us</h2>
+          <p className="text-gray-300">Get in touch with our team</p>
+        </div>
 
-      {/* Header Section */}
-      <div className="relative z-10 text-center pt-16 pb-12 px-4">
-        <h1 className="text-3xl md:text-6xl font-black bg-yellow-100  bg-clip-text text-transparent mb-4">
-          CONTACT US
-        </h1>
-        <p className="text-grey-100 text-xl md:text-xl font-light tracking-wide mb-6 mt-10">
-          Get in touch with our team
-        </p>
-      </div>
-
-      {/* Contact Cards - Horizontal Flex */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 pb-16">
-        <div className="flex flex-col lg:flex-row gap-10 justify-center items-stretch">
+        <div className="flex flex-col lg:flex-row gap-6 justify-center items-stretch">
           {contacts.map((contact) => (
             <div
               key={contact.id}
-              className={`relative flex-1 max-w-sm h-90 mx-auto lg:mx-0 bg-gradient-to-br from-gray-800 to-gray-900 border-2 border-gray-700 rounded-2xl p-8 transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 cursor-pointer overflow-hidden ${
-                hoveredCard === contact.id ? 'border-yellow-400 shadow-2xl shadow-yellow-400/20' : ''
+              className={`relative flex-1 max-w-sm mx-auto lg:mx-0 bg-secondary-black border border-white/10 rounded-xl p-6 transition-transform duration-300 hover:-translate-y-1 cursor-pointer overflow-hidden ${
+                hoveredCard === contact.id ? 'ring-1 ring-primary-yellow' : ''
               }`}
               onMouseEnter={() => setHoveredCard(contact.id)}
               onMouseLeave={() => setHoveredCard(null)}
             >
-              {/* Avatar */}
-              <div className="relative mb-6">
+              <div className="relative mb-4">
                 <img 
                   src={contact.image} 
                   alt={contact.name} 
-                  className={`w-24 h-24 mx-auto rounded-full object-cover transition-all duration-300 ${
-                    hoveredCard === contact.id ? 'ring-4 ring-yellow-200 animate-pulse' : ''
+                  className={`w-20 h-20 mx-auto rounded-full object-cover ${
+                    hoveredCard === contact.id ? 'ring-4 ring-yellow-200' : ''
                   }`}
                 />
               </div>
 
-              {/* Contact Info */}
-              <div className="text-center space-y-4">
+              <div className="text-center space-y-3">
                 <div>
-                  <h3 className="text-xl font-bold text-yellow-200 mb-2">{contact.name}</h3>
-                  <div className="inline-flex items-center gap-2 bg-yellow-400/20 px-3 py-1 rounded-full">
+                  <h3 className="text-lg font-semibold text-yellow-200">{contact.name}</h3>
+                  <div className="inline-flex items-center gap-2 bg-white/5 px-2 py-1 rounded">
                     <User className="w-3 h-3" />
-                    <span className="text-gray-300 text-sm">{contact.role}</span>
+                    <span className="text-gray-300 text-xs">{contact.role}</span>
                   </div>
                 </div>
 
-                {/* Contact Actions */}
-                <div className="space-y-3 mt-6">
+                <div className="space-y-2 mt-4">
                   <a 
                     href={`tel:${contact.phone}`}
-                    className="flex items-center justify-center gap-3 bg-yellow-100 hover:bg-yellow-150 text-black font-semibold py-3 px-4 rounded-lg transition-all duration-300 hover:scale-105"
+                    className="flex items-center justify-center gap-2 bg-primary-yellow text-black font-semibold py-2 px-3 rounded hover:brightness-110"
                   >
                     <Phone className="w-4 h-4" />
                     {contact.phone}
@@ -99,12 +89,11 @@ const ContactPage: React.FC = () => {
                 </div>
               </div>
 
-              {/* Speciality (appears on hover at bottom) */}
               <div
-                className={`absolute bottom-5 left-1/2 -translate-x-1/2 text-center text-sm font-medium text-yellow-100 transition-all duration-500 ${
+                className={`absolute bottom-4 left-1/2 -translate-x-1/2 text-center text-xs font-medium text-yellow-100 transition-all ${
                   hoveredCard === contact.id 
                     ? 'opacity-100 translate-y-0' 
-                    : 'opacity-0 translate-y-6'
+                    : 'opacity-0 translate-y-2'
                 }`}
               >
                 {contact.speciality}
@@ -113,7 +102,7 @@ const ContactPage: React.FC = () => {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

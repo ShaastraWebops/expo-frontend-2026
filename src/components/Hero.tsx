@@ -3,58 +3,25 @@
 function Hero() {
   return (
     <>
-      <div className="flex flex-col items-center justify-center relative min-h-screen">
-        <p className="text-[#f7a13f] text-md sm:text-3xl/normal sm:text-center font-semibold w-[75%] mx-auto mb-20 ">
-          The Shaastra Expo is IIT Madras' flagship exhibition showcasing
-          cutting-edge innovations in AI, robotics, biotech, clean energy, and
-          more. With curated exhibits from startups, corporates, and premier
-          research labs, it offers a dynamic platform to display emerging tech
-          and engage with a highly technical audience. Attracting thousands from
-          across India, the Expo is a vibrant confluence of technology, talent,
-          and opportunity.
-        </p>
+      <section id="about" className="relative">
+        <div className="max-w-5xl mx-auto px-4 py-24">
+          <h1 className="text-4xl md:text-6xl font-primary text-primary-yellow mb-6">Shaastra Expo 2026</h1>
+          <p className="text-gray-300 text-lg md:text-xl leading-relaxed max-w-3xl">
+            IIT Madras' flagship exhibition showcasing innovations across AI, robotics, biotech, clean energy, mobility, and beyond. Meet startups, corporates, and research labs shaping the future.
+          </p>
 
-        <div className="mb-25">
-          <div className="mb-20 transform md:-translate-x-40 when hover:cursor-default hover:scale-x-110 hover:scale-y-102 transition-all duration-100">
-            <h1 className="font-bangers text-primary-yellow text-7xl transform -translate-x-10">
-              When?
-            </h1>
-            <h2 className="text-2xl font-primary text-secondary-yellow transform translate-x-10">
-              2nd to 6th Jan , 2026
-            </h2>
-          </div>
-
-          <div
-            className="mb-20 transform md:translate-x-40 where hover:cursor-default hover:scale-x-110 hover:scale-y-102 transition-all duration-100"
-            // onMouseEnter={() => {
-            //   document
-            //     .querySelector("#deer")!
-            //     .classList.remove(
-            //       "scale-0"
-            //     );
-            //   document
-            //     .querySelector("#deer")!
-            //     .classList.add(
-            //       "scale-100"
-            //     );
-            // }}
-          >
-            <h1 className="font-bangers text-primary-yellow text-7xl text-right transform translate-x-10">
-              Where?
-            </h1>
-            <h2 className="text-2xl font-primary text-secondary-yellow text-right transform">
-              KV grounds , IIT Madras
-            </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+            <div className="rounded-xl border border-white/10 bg-secondary-black p-6 hover:border-primary-yellow transition-colors">
+              <div className="text-sm text-gray-400">When</div>
+              <div className="text-2xl md:text-3xl font-primary text-primary-yellow mt-1">2–6 January, 2026</div>
+            </div>
+            <div className="rounded-xl border border-white/10 bg-secondary-black p-6 hover:border-primary-yellow transition-colors">
+              <div className="text-sm text-gray-400">Where</div>
+              <div className="text-2xl md:text-3xl font-primary text-primary-yellow mt-1">KV Grounds, IIT Madras</div>
+            </div>
           </div>
         </div>
-      </div>
-
-      <div
-        id="deer"
-        className="w-40 absolute bottom-0 left-0 transition-all duration-300 md:block hidden"
-      >
-        <img src="/images/bitmap.svg" alt="" />
-      </div>
+      </section>
     </>
   );
 }

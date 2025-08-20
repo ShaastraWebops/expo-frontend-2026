@@ -14,43 +14,26 @@ const images = [
 function PrevExhibits() {
   return (
     <>
-      <div className="flex flex-col items-center justify-center my-20">
-        <h1 className="text-6xl font-primary text-primary-yellow mx-10">
-          Previous Exhibits
-        </h1>
+      <section id="exhibits" className="my-20">
+        <div className="max-w-7xl mx-auto px-4">
+          <h2 className="text-4xl md:text-6xl font-primary text-primary-yellow">Previous Exhibits</h2>
 
-        <div className="flex flex-wrap items-center justify-center mt-10 md:gap-0 gap-5">
-          {images.map(({ src, title }, i) => {
-            return (
-              <div key={i} className="m-2 relative" 
-              onMouseEnter={() => {
-                const tooltip = document.getElementById(`tooltip-${i}`);
-                if (tooltip) {
-                  tooltip.style.opacity = "1";
-                  tooltip.style.transform = "translateY(-10px)";
-                }
-              }}
-              onMouseLeave={() => {
-                const tooltip = document.getElementById(`tooltip-${i}`);
-                if (tooltip) {
-                  tooltip.style.opacity = "0";
-                  tooltip.style.transform = "translateY(0)";
-                }
-              }}
-              >
-                <div id={`tooltip-${i}`} className="absolute z-100 rounded-2xl -bottom-5 md:-bottom-10 w-fit h-fit md:px-5 p-2 bg-secondary-yellow/95 flex items-center justify-center text-black text-xl font-bold md:opacity-0 transition-all duration-300">
-                  {title}
-                </div>
+          <div className="mt-10 [column-fill:balance] columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-4">
+            {images.map(({ src, title }, i) => (
+              <figure key={i} className="break-inside-avoid mb-4 relative group">
                 <img
                   src={src}
-                  alt={`Exhibit ${i + 1}`}
-                  className="w-90 object-cover rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
+                  alt={title}
+                  className="w-full rounded-lg shadow-lg hover:opacity-95 transition"
                 />
-              </div>
-            );
-          })}
+                <figcaption className="absolute bottom-2 left-2 right-2 px-3 py-1 rounded-md text-sm font-semibold text-black bg-yellow-200/90 opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition">
+                  {title}
+                </figcaption>
+              </figure>
+            ))}
+          </div>
         </div>
-      </div>
+      </section>
     </>
   );
 }

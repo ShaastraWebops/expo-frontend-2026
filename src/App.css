@@ -2,21 +2,21 @@
 
 
 @theme {
-  --color-primary-yellow: #f5a302;
-  --color-secondary-yellow: #f4b301;
-  --color-tertiary-yellow: #fed154;
-  --color-primary-black: #111111;
-  --color-secondary-black: #2a2e34;
-  --color-tertiary-black: #3b3f46;
+  --color-primary-yellow: #f4d03f;
+  --color-secondary-yellow: #f1c40f;
+  --color-tertiary-yellow: #ffe58f;
+  --color-primary-black: #0f1115;
+  --color-secondary-black: #1a1f27;
+  --color-tertiary-black: #262c36;
 
   --font-primary: "Headings", sans-serif;
   --font-bangers: "Bangers", system-ui;
   --color-black-100 : #3B3F46;
     --color-black-150 : #2A2E34;
     --color-black-200 : #1E2328;
-    --color-yellow-100 : #f5a302;
-    --color-yellow-150 : #f4b301;
-    --color-yellow-200 : #fed154;
+    --color-yellow-100 : #f4d03f;
+    --color-yellow-150 : #f1c40f;
+    --color-yellow-200 : #ffe58f;
 }
 
 @font-face {
@@ -28,6 +28,6 @@
 }
 
 .header-button {
-  @apply [clip-path:polygon(0_0,100%_0,100%_70%,85%_100%,0_100%)] hidden mx-3 md:flex items-center justify-center sm:w-50 w-35 h-15 sm:h-20 bg-primary-yellow hover:scale-110 transition-all duration-100 hover:cursor-pointer
+  @apply hidden mx-3 md:flex items-center justify-center px-5 h-12 rounded-lg bg-primary-yellow text-black font-semibold hover:brightness-110 hover:-translate-y-0.5 transition-all duration-150 hover:cursor-pointer;
 }
     
