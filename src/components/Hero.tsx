@@ -1,60 +1,67 @@
 // import Countdown from "./Countdown.tsx";
-
+import Button from "./RetroButton";
+import RetroCard from "./RetroCard";
 function Hero() {
   return (
     <>
-      <div className="flex flex-col items-center justify-center relative min-h-screen">
-        <p className="text-[#f7a13f] text-md sm:text-3xl/normal sm:text-center font-semibold w-[75%] mx-auto mb-20 ">
-          The Shaastra Expo is IIT Madras' flagship exhibition showcasing
-          cutting-edge innovations in AI, robotics, biotech, clean energy, and
-          more. With curated exhibits from startups, corporates, and premier
-          research labs, it offers a dynamic platform to display emerging tech
-          and engage with a highly technical audience. Attracting thousands from
-          across India, the Expo is a vibrant confluence of technology, talent,
-          and opportunity.
-        </p>
 
-        <div className="mb-25">
-          <div className="mb-20 transform md:-translate-x-40 when hover:cursor-default hover:scale-x-110 hover:scale-y-102 transition-all duration-100">
-            <h1 className="font-bangers text-primary-yellow text-7xl transform -translate-x-10">
-              When?
-            </h1>
-            <h2 className="text-2xl font-primary text-secondary-yellow transform translate-x-10">
-              2nd to 6th Jan , 2026
-            </h2>
-          </div>
+      <div className="relative flex min-h-screen flex-col items-center justify-center bg-black-300 p-8 md:flex-row md:items-center md:justify-between md:p-16 mx-16">
 
-          <div
-            className="mb-20 transform md:translate-x-40 where hover:cursor-default hover:scale-x-110 hover:scale-y-102 transition-all duration-100"
-            // onMouseEnter={() => {
-            //   document
-            //     .querySelector("#deer")!
-            //     .classList.remove(
-            //       "scale-0"
-            //     );
-            //   document
-            //     .querySelector("#deer")!
-            //     .classList.add(
-            //       "scale-100"
-            //     );
-            // }}
-          >
-            <h1 className="font-bangers text-primary-yellow text-7xl text-right transform translate-x-10">
-              Where?
-            </h1>
-            <h2 className="text-2xl font-primary text-secondary-yellow text-right transform">
-              KV grounds , IIT Madras
-            </h2>
+        {/* --- LEFT COLUMN --- */}
+        <div className="text-center md:text-left font-primary">
+          <h1 className=" text-10xl font-bold text-[#00ff84] sm:text-9xl pb-2">
+            EXPO'26
+          </h1>
+          <h2 className="font-primary text-4xl text-[#76ffbd] ">
+            Where innovation finds expression
+          </h2>
+          <p className="text-2xl  text-amber-100 w-[75%] pt-15 mb-20 ">
+            The Shaastra Expo is IIT Madras' flagship exhibition showcasing
+            cutting-edge innovations in AI, robotics, biotech, clean energy, and
+            more. With curated exhibits from startups, corporates, and premier
+            research labs, it offers a dynamic platform to display emerging tech
+            and engage with a highly technical audience. Attracting thousands from
+            across India, the Expo is a vibrant confluence of technology, talent,
+            and opportunity.
+          </p>
+        </div>
+
+        {/* --- RIGHT COLUMN (Desktop View) --- */}
+        <div className="hidden md:flex flex-col items-end gap-6">
+          <RetroCard className="w-full mb-1">
+            <div className="text-center w-full">
+              <h3 className="font-mono text-lg font-bold mb-2">
+                WHEN
+              </h3>
+              <p className="font-mono text-sm text-gray-700 dark:text-gray-300">
+                2ND TO 6TH JAN, 2026
+              </p>
+            </div>
+          </RetroCard>
+          <RetroCard className="w-full">
+            <div className="text-center">
+              <h3 className="font-mono text-lg font-bold mb-2 w-full">
+                WHERE
+              </h3>
+              <p className="font-mono text-sm text-gray-700 dark:text-gray-300">
+                KV GROUNDS, IIT MADRAS
+              </p>
+            </div>
+          </RetroCard>
+          <div className="mt-10 flex gap-4">
+            <Button variant="default" size="lg">
+              <h1 className="text-3xl font-primary">Register</h1>
+            </Button>
+            <Button variant="default" size="lg">
+              <h1 className="text-3xl font-primary">Brochure</h1>
+            </Button>
           </div>
         </div>
+
       </div>
 
-      <div
-        id="deer"
-        className="w-40 absolute bottom-0 left-0 transition-all duration-300 md:block hidden"
-      >
-        <img src="/images/bitmap.svg" alt="" />
-      </div>
+
+
     </>
   );
 }
