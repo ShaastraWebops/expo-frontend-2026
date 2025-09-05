@@ -20,7 +20,7 @@ const RetroCard = React.forwardRef<HTMLDivElement, RetroCardProps>(
         )}
         {...props}
       >
-        <div className="bg-white dark:bg-gray-900 border-2 border-black dark:border-white">
+        <div className="bg-white dark:bg-gray-900 border-2 border-black dark:border-white h-full">
           <div className="p-4 text-black dark:text-white">{children}</div>
         </div>
       </div>

@@ -22,14 +22,14 @@ interface MasonryGridProps {
 const initialItems = [
   { id:'8',src: "/images/e8.png", title: "Neomotion" },
   { id:'3',src: "/images/e3.webp", title: "Drobots" },
-  { id:'4', src: "/images/e4.jpg", title: "Drones for Life" },
   { id:'6', src: "/images/e6.jpg", title: "ISRO" },
   { id:'7',src: "/images/e7.jpg", title: "Indian Navy" },
-  { id:'1', src: "/images/e1.jpg", title: "BrahMos" },
+  //{ id:'1', src: "/images/e1.jpg", title: "BrahMos" },
   { id:'9',src: "/images/e9.jpg", title: "Raptee Energy" },
   { id:'10',src: "/images/e10.jpg", title: "Satori XR" },
   { id:'2',src: "/images/e2.png", title: "DRDO" },
   { id:'5', src: "/images/e5.png", title: "Guvi Geeks" },
+  { id:'4', src: "/images/e4.jpg", title: "Drones for Life" },
   
 ];
 
