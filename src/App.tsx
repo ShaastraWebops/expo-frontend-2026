@@ -6,6 +6,7 @@ import WhyExhibit from "./components/WhyExhibit";
 import PrevExhibits from "./components/PrevExhibits";
 import ContactPage from './components/ContacUs.tsx'
 import FAQsPage from "./components/Faqs.tsx";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <PrevExhibits />
         <FAQsPage />
         <ContactPage />
+        <Footer />
       </div>
     </>
   );

@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import { Phone } from 'lucide-react';
-import { User } from 'lucide-react';
+import React, { useState } from "react";
+import { Phone } from "lucide-react";
+import { User } from "lucide-react";
+import RetroCard from "./RetroCard";
 
 interface Contact {
   id: number;
@@ -18,99 +19,133 @@ const ContactPage: React.FC = () => {
     {
       id: 1,
       name: "Sai Sathwik Chandaluri",
-      role: "Head | Shows and Exhibitions",
+      role: "Head",
       phone: "+91 7842320365",
       image: "./ProfPhoto(1).jpg",
-      speciality: "Exibition Planning & Coordination" // Person 1
+      speciality: "Exibition Planning & Coordination", // Person 1
     },
     {
       id: 2,
       name: "Vriddhi Venkateswaran",
-      role: "Head | Shows and Exhibitions", 
+      role: "Head",
       phone: "+91 9969955321",
-      image: "./Image formal.jpg",
-      speciality: "Industry Relations & Partnerships" // Person 2
+      image: "./head2.jpg",
+      speciality: "Industry Relations & Partnerships", // Person 2
     },
     {
       id: 3,
       name: "Shanmukh",
-      role: "Head | Shows and Exhibitions",
+      role: "Head",
       phone: "+91 9849920303",
       image: "PHOTO.jpg",
-      speciality: "Logistics & Operations" // Person 3
-    }
+      speciality: "Logistics & Operations", // Person 3
+    },
+  ];
+
+  const cores: Contact[] = [
+    {
+      id: 1,
+      name: "Abhinav Garapati",
+      role: "Core",
+      phone: "+91 95992 50069",
+      image: "core1.JPG",
+      speciality: "Logistics & Operations", // Person 3
+    },
+    {
+      id: 2,
+      name: "Pranavi",
+      role: "Core",
+      phone: "+91 9347759882",
+      image: "core2.jpeg",
+      speciality: "Logistics & Operations", // Person 3
+    },
   ];
 
   return (
-    <div className="min-h-screen text-white overflow-hidden relative">
-
+    <div className="min-h-screen text-white overflow-hidden relative mt-12">
       {/* Header Section */}
       <div className="relative z-10 text-center pt-16 pb-12 px-4">
         <h1 className="text-3xl md:text-6xl font-black bg-yellow-100  bg-clip-text text-transparent mb-4">
           CONTACT US
         </h1>
-        <p className="text-grey-100 text-xl md:text-xl font-light tracking-wide mb-6 mt-10">
+        <p className="text-grey-100 text-2xl md:text-2xl tracking-wide mb-6">
           Get in touch with our team
         </p>
       </div>
 
       {/* Contact Cards - Horizontal Flex */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 pb-16">
-        <div className="flex flex-col lg:flex-row gap-10 justify-center items-stretch">
-          {contacts.map((contact) => (
-            <div
-              key={contact.id}
-              className={`relative flex-1 max-w-sm h-90 mx-auto lg:mx-0 bg-gradient-to-br from-gray-800 to-gray-900 border-2 border-gray-700 rounded-2xl p-8 transition-all duration-500 transform hover:-translate-y-3 hover:scale-105 cursor-pointer overflow-hidden ${
-                hoveredCard === contact.id ? 'border-yellow-400 shadow-2xl shadow-yellow-400/20' : ''
-              }`}
-              onMouseEnter={() => setHoveredCard(contact.id)}
-              onMouseLeave={() => setHoveredCard(null)}
-            >
-              {/* Avatar */}
-              <div className="relative mb-6">
-                <img 
-                  src={contact.image} 
-                  alt={contact.name} 
-                  className={`w-24 h-24 mx-auto rounded-full object-cover transition-all duration-300 ${
-                    hoveredCard === contact.id ? 'ring-4 ring-yellow-200 animate-pulse' : ''
-                  }`}
-                />
-              </div>
-
-              {/* Contact Info */}
-              <div className="text-center space-y-4">
-                <div>
-                  <h3 className="text-xl font-bold text-yellow-200 mb-2">{contact.name}</h3>
-                  <div className="inline-flex items-center gap-2 bg-yellow-400/20 px-3 py-1 rounded-full">
-                    <User className="w-3 h-3" />
-                    <span className="text-gray-300 text-sm">{contact.role}</span>
+        <div className="grid grid-cols-1 md:grid-rows-2 gap-10 justify-center items-stretch">
+          <div className="hidden md:grid grid-cols-1 md:grid-cols-2 gap-10 md:px-[16.5%]">
+            {cores.map((contact) => (
+              <RetroCard>
+                <div className="text-left space-y-5">
+                  <div className="w-full h-48 bg-black dark:bg-white mx-auto flex items-center justify-center">
+                    <div className="w-full h-full bg-gray-600 flex items-center justify-center text-white text-xs font-mono">
+                      <img
+                        src={contact.image}
+                        alt={contact.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="font-mono font-bold">{contact.name}</h3>
+                    <p className="font-mono text-sm text-gray-600 dark:text-gray-400">
+                      {contact.role} | {contact.phone}
+                    </p>
                   </div>
                 </div>
+              </RetroCard>
+            ))}
+          </div>
 
-                {/* Contact Actions */}
-                <div className="space-y-3 mt-6">
-                  <a 
-                    href={`tel:${contact.phone}`}
-                    className="flex items-center justify-center gap-3 bg-yellow-100 hover:bg-yellow-150 text-black font-semibold py-3 px-4 rounded-lg transition-all duration-300 hover:scale-105"
-                  >
-                    <Phone className="w-4 h-4" />
-                    {contact.phone}
-                  </a>
-                </div>
-              </div>
-
-              {/* Speciality (appears on hover at bottom) */}
-              <div
-                className={`absolute bottom-5 left-1/2 -translate-x-1/2 text-center text-sm font-medium text-yellow-100 transition-all duration-500 ${
-                  hoveredCard === contact.id 
-                    ? 'opacity-100 translate-y-0' 
-                    : 'opacity-0 translate-y-6'
-                }`}
-              >
-                {contact.speciality}
-              </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mx-12 md:mx-0">
+            <div className="md:hidden grid grid-cols-1 md:grid-cols-2 gap-10">
+              {cores.map((contact) => (
+                <RetroCard>
+                  <div className="text-left space-y-5">
+                    <div className="w-full h-48 bg-black dark:bg-white mx-auto flex items-center justify-center">
+                      <div className="w-full h-full bg-gray-600 flex items-center justify-center text-white text-xs font-mono">
+                        <img
+                          src={contact.image}
+                          alt={contact.name}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    </div>
+                    <div>
+                      <h3 className="font-mono font-bold">{contact.name}</h3>
+                      <p className="font-mono text-sm text-gray-600 dark:text-gray-400">
+                        {contact.role} | {contact.phone}
+                      </p>
+                    </div>
+                  </div>
+                </RetroCard>
+              ))}
             </div>
-          ))}
+            {contacts.map((contact) => (
+              <RetroCard>
+                <div className="text-left space-y-5">
+                  <div className="w-full h-48 bg-black dark:bg-white mx-auto flex items-center justify-center">
+                    <div className="w-full h-full bg-gray-600 flex items-center justify-center text-white text-xs font-mono">
+                      <img
+                        src={contact.image}
+                        alt={contact.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="font-mono font-bold">{contact.name}</h3>
+                    <p className="font-mono text-sm text-gray-600 dark:text-gray-400">
+                      {contact.role} | {contact.phone}
+                    </p>
+                  </div>
+                </div>
+              </RetroCard>
+            ))}
+          </div>
         </div>
       </div>
     </div>
