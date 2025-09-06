@@ -6,7 +6,7 @@ function Hero() {
   return (
     <>
 
-      <div className="relative grid grid-cols-1 lg:grid-cols-3 min-h-screen  items-center justify-center bg-black-300 p-6 mt-6 md:items-center md:justify-between lg:p-16 mx-16 ">
+      <div className="relative grid grid-cols-1 lg:grid-cols-3 min-h-screen  items-center justify-center bg-black-300 p-6 mt-16 md:items-center md:justify-between lg:p-16 mx-16 ">
 
         {/* --- LEFT COLUMN --- */}  
         <div className="text-left font-primary lg:col-span-2 ">
@@ -16,7 +16,7 @@ function Hero() {
           <h2 className="font-primary xl:text-3xl text-left lg:text-2xl text-xl text-[#76ffbd] ">
             Where innovation finds expression
           </h2>
-          <p className="xl:text-2xl sm:text-xl text-md text-amber-100 sm:w-[75%] w-full pt-15 mb-20 text-left">
+          <p className="xl:text-2xl sm:text-xl text-md text-white sm:w-[75%] w-full pt-15 mb-20 text-left">
             The Shaastra Expo is IIT Madras' flagship exhibition showcasing
             cutting-edge innovations in AI, robotics, biotech, clean energy, and
             more. With curated exhibits from startups, corporates, and premier

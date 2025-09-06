@@ -58,13 +58,13 @@ function FAQsPage() {
 
   return (
     <>
-      <div className="mt-25 font-primary">
+      <div className="my-48 font-primary">
         {/* Header Section */}
         <div className="text-center mb-16 ">
           <h1 className="text-4xl md:text-6xl font-primary text-[#00ff84] mb-4">
             FAQs
           </h1>
-          <p className="text-md md:text-2xl text-[#76ffbd]  max-w-3xl mx-5 sm:mx-25 md:mx-auto">
+          <p className="text-md md:text-2xl text-[#76ffbd] px-6 max-w-3xl mx-5 sm:mx-25 md:mx-auto">
             Got questions? We've got answers! Find everything you need to know
             about Shaastra Expo 2026.
           </p>
