@@ -31,9 +31,9 @@ function WhyExhibit() {
   return (
     <>
       <div className="flex flex-col items-center justify-center m-10 mb-60">
-        <h1 className="text-6xl font-primary text-[#00ff84] my-24">Why Exhibit?</h1>
+        <h1 className="text-4xl md:text-6xl font-primary text-[#00ff84] my-24">Why Exhibit?</h1>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full xl:px-48">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full xl:px-48 px-12">
                 {exhibitData.map((exhibit, index) => {
                     return (
                         <ExhibitCard 
