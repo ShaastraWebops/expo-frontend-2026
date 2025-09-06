@@ -20,16 +20,15 @@ interface MasonryGridProps {
 
 
 const initialItems = [
-  { id:'8',src: "/images/e8.png", title: "Neomotion" },
-  { id:'3',src: "/images/e3.webp", title: "Drobots" },
-  { id:'6', src: "/images/e6.jpg", title: "ISRO" },
-  { id:'7',src: "/images/e7.jpg", title: "Indian Navy" },
-  //{ id:'1', src: "/images/e1.jpg", title: "BrahMos" },
-  { id:'9',src: "/images/e9.jpg", title: "Raptee Energy" },
-  { id:'10',src: "/images/e10.jpg", title: "Satori XR" },
-  { id:'2',src: "/images/e2.png", title: "DRDO" },
-  { id:'5', src: "/images/e5.png", title: "Guvi Geeks" },
-  { id:'4', src: "/images/e4.jpg", title: "Drones for Life" },
+  { id: 8, src: "/images/e8.png", title: "Neomotion" },
+  { id: 3, src: "/images/e3.webp", title: "Drobots" },
+  { id: 6, src: "/images/e6.jpg", title: "ISRO" },
+  { id: 7, src: "/images/e7.jpg", title: "Indian Navy" },
+  { id: 9, src: "/images/e9.jpg", title: "Raptee Energy" },
+  { id: 10, src: "/images/e10.jpg", title: "Satori XR" },
+  { id: 2, src: "/images/e2.png", title: "DRDO" },
+  { id: 5, src: "/images/e5.png", title: "Guvi Geeks" },
+  { id: 4, src: "/images/e4.jpg", title: "Drones for Life" },
   
 ];
 
@@ -103,7 +102,7 @@ export default function PrevExhibits() {
   return (
   
     <div className="font-sans transition-colors">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="container mx-auto px-6 lg:px-8 py-8">
         <main>
             <h2 className="text-4xl md:text-6xl font-primary text-[#00ff84] mb-24 text-center">Previous Exhibits.</h2>
           <MasonryGrid items={initialItems} />
