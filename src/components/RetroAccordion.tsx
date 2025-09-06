@@ -52,29 +52,45 @@ const useItem = () => {
 
 
 // Container
-const Accordion = forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement> & { defaultValue?: string | null }
->(({ className, children, defaultValue = null, ...props }, ref) => {
-  const [openValue, setOpen] = useState<string | null>(defaultValue);
+type AccordionProps = React.HTMLAttributes<HTMLDivElement> & {
+  defaultValue?: string | null;
+  type?: "single";        // API-compat only (component is single-mode)
+  collapsible?: boolean;  // true = can close by clicking open item
+};
 
-  const setOpenValue = (value: string) => {
-    setOpen((prev) => (prev === value ? null : value));
-  };
+const Accordion = forwardRef<HTMLDivElement, AccordionProps>(
+  (
+    {
+      className,
+      children,
+      defaultValue = null,
+      type = "single",          // swallowed (not forwarded to DOM)
+      collapsible = true,       // swallowed (not forwarded to DOM)
+      ...props
+    },
+    ref
+  ) => {
+    const [openValue, setOpen] = useState<string | null>(defaultValue);
 
-  return (
-    <AccordionContext.Provider value={{ openValue, setOpenValue }}>
-      <div
-        ref={ref}
-        className={cn("w-full mx-auto space-y-4", className)}
-        {...props}
-      >
-        {children}
-      </div>
-    </AccordionContext.Provider>
-  );
-});
+    const setOpenValue = (value: string) => {
+      setOpen((prev) => (prev === value ? (collapsible ? null : prev) : value));
+    };
+
+    return (
+      <AccordionContext.Provider value={{ openValue, setOpenValue }}>
+        <div
+          ref={ref}
+          className={cn("w-full mx-auto space-y-4", className)}
+          {...props}
+        >
+          {children}
+        </div>
+      </AccordionContext.Provider>
+    );
+  }
+);
 Accordion.displayName = "Accordion";
+
 
 // Item
 const AccordionItem = forwardRef<

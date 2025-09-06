@@ -1,6 +1,3 @@
-import React, { useState } from "react";
-import { Phone } from "lucide-react";
-import { User } from "lucide-react";
 import RetroCard from "./RetroCard";
 
 interface Contact {
@@ -13,7 +10,6 @@ interface Contact {
 }
 
 const ContactPage: React.FC = () => {
-  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
   const contacts: Contact[] = [
     {
