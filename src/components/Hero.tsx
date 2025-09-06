@@ -16,7 +16,7 @@ function Hero() {
           <h2 className="font-primary sm:text-4xl text-left text-2xl text-[#76ffbd] ">
             Where innovation finds expression
           </h2>
-          <p className="text-2xl  text-amber-100 w-[75%] pt-15 mb-20 text-left">
+          <p className="text-2xl  text-white w-[75%] pt-15 mb-20 text-left">
             The Shaastra Expo is IIT Madras' flagship exhibition showcasing
             cutting-edge innovations in AI, robotics, biotech, clean energy, and
             more. With curated exhibits from startups, corporates, and premier

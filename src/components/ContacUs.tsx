@@ -65,10 +65,10 @@ const ContactPage: React.FC = () => {
     <div className="min-h-screen text-white overflow-hidden relative mt-12">
       {/* Header Section */}
       <div className="relative z-10 text-center pt-16 pb-12 px-4">
-        <h1 className="text-3xl md:text-6xl font-black bg-yellow-100  bg-clip-text text-transparent mb-4">
-          CONTACT US
+        <h1 className="text-4xl md:text-6xl text-[#00ff84] font-primary mb-4">
+          Contact Us
         </h1>
-        <p className="text-grey-100 text-2xl md:text-2xl tracking-wide mb-6">
+        <p className="text-grey-100 text-md md:text-2xl font-primary text-[#76ffbd] tracking-wide mb-6">
           Get in touch with our team
         </p>
       </div>
