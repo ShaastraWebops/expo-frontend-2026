@@ -14,7 +14,7 @@ const RetroCard = React.forwardRef<HTMLDivElement, RetroCardProps>(
       <div
         ref={ref}
         className={cn(
-          "bg-[#00ff84] border-2 border-black dark:border-white p-2 transition-all duration-300 shadow-[4px_4px_0px_black] dark:shadow-[4px_4px_0px_white] hover:shadow-[8px_8px_0px_black] dark:hover:shadow-[8px_8px_0px_white] hover:-translate-y-1",
+          "bg-[#f5b11d] border-2 border-black dark:border-white p-2 transition-all duration-300 shadow-[4px_4px_0px_black] dark:shadow-[4px_4px_0px_white] hover:shadow-[8px_8px_0px_black] dark:hover:shadow-[8px_8px_0px_white] hover:-translate-y-1",
           className
         )}
         {...props}

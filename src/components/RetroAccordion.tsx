@@ -135,7 +135,7 @@ const AccordionTrigger = forwardRef<
       type="button"
       onClick={() => setOpenValue(value)}
       className={cn(
-        "flex w-full items-center justify-between p-4 font-bold text-lg bg-[#00ff84] text-black cursor-pointer hover:bg-green-400 transition-colors",
+        "flex w-full items-center justify-between p-4 font-bold text-lg bg-[#f5b11d] text-black cursor-pointer hover:bg-[#f59f1dfa] transition-colors",
         className
       )}
       {...props}

@@ -39,7 +39,7 @@ function Countdown () {
   return (
     <>
       <div className="p-4 text-center">
-        <div className="flex justify-center gap-4 text-lg font-mono text-primary-yellow/50">
+        <div className="flex justify-center gap-4 text-lg font-mono text-primary-[#f5b11d]">
           <div>{timeLeft.days}d</div>
           <div>{timeLeft.hours}h</div>
           <div>{timeLeft.minutes}m</div>

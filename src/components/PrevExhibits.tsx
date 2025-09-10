@@ -73,7 +73,7 @@ const GridItem: React.FC<GridItemProps> = ({ item }) => {
                       
                     </motion.button>
                 </div>
-                <p className="text-white font-bold text-base truncate">{item.title}</p>
+                <p className="text-white font-bold text-2xl truncate">{item.title}</p>
             </div>
           </motion.div>
         )}
@@ -104,7 +104,7 @@ export default function PrevExhibits() {
     <div className="font-sans transition-colors">
       <div className="container mx-auto px-12 lg:px-8 py-8">
         <main>
-            <h2 className="text-4xl md:text-6xl font-primary text-[#00ff84] mb-24 text-center">Previous Exhibits.</h2>
+            <h2 className="text-4xl md:text-6xl font-primary text-[#f5b11d] mb-24 text-center">Previous Exhibits.</h2>
           <MasonryGrid items={initialItems} />
         </main>
       </div>
