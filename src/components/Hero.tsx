@@ -50,10 +50,10 @@ function Hero() {
             </div>
           </RetroCard>
           <div className="mt-10 flex gap-4 w-full">
-            <Button className="bg-[#f5b11d] text-[#000000] border-2 border-[#000000] shadow-[4px_4px_0px_0px_#000000] hover:shadow-none hover:translate-x-1 hover:translate-y-1 disabled:hover:translate-x-0 disabled:hover:translate-y-0 disabled:hover:shadow-[4px_4px_0px_0px_#000000] dark:bg-[#f5b11d] dark:text-[#000000] dark:border-[#000000] dark:shadow-[4px_4px_0px_0px_#ffffff] w-full">
+            <Button onClick={()=>{window.open("https://forms.gle/nyq3VDYtzTutk6aC8")}} className="bg-[#f5b11d] text-[#000000] border-2 border-[#000000] shadow-[4px_4px_0px_0px_#000000] hover:shadow-none hover:translate-x-1 hover:translate-y-1 disabled:hover:translate-x-0 disabled:hover:translate-y-0 disabled:hover:shadow-[4px_4px_0px_0px_#000000] dark:bg-[#f5b11d] dark:text-[#000000] dark:border-[#000000] dark:shadow-[4px_4px_0px_0px_#ffffff] w-full">
               <h1 className="xl:text-2xl sm:text-lg font-primary">Register</h1>
             </Button>
-            <Button className="bg-[#f5b11d] text-[#000000] border-2 border-[#000000] shadow-[4px_4px_0px_0px_#000000] hover:shadow-none hover:translate-x-1 hover:translate-y-1 disabled:hover:translate-x-0 disabled:hover:translate-y-0 disabled:hover:shadow-[4px_4px_0px_0px_#000000] dark:bg-[#f5b11d] dark:text-[#000000] dark:border-[#000000] dark:shadow-[4px_4px_0px_0px_#ffffff] w-full">
+            <Button onClick={()=>{window.open("https://drive.google.com/file/d/1U-ytI62gaBC5yzaJnJrT914AZl4d70Xr/view?usp=sharing")}} className="bg-[#f5b11d] text-[#000000] border-2 border-[#000000] shadow-[4px_4px_0px_0px_#000000] hover:shadow-none hover:translate-x-1 hover:translate-y-1 disabled:hover:translate-x-0 disabled:hover:translate-y-0 disabled:hover:shadow-[4px_4px_0px_0px_#000000] dark:bg-[#f5b11d] dark:text-[#000000] dark:border-[#000000] dark:shadow-[4px_4px_0px_0px_#ffffff] w-full">
               <h1 className="xl:text-2xl sm:text-lg font-primary">Brochure</h1>
             </Button>
           </div>
