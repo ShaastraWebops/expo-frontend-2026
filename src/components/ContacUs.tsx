@@ -135,7 +135,7 @@ const ContactPage: React.FC = () => {
                   <div>
                     <h3 className="font-mono font-bold">{contact.name}</h3>
                     <p className="font-mono text-sm text-gray-600 dark:text-gray-400">
-                      {contact.role} | {contact.phone}
+                      {contact.role}
                     </p>
                   </div>
                 </div>
